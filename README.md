@@ -6,8 +6,8 @@ If you want to play the game itself - click on the name above.
 The scripts have been written for version 2.0.0 of the game (released 17-08-2022)
 
 # Installation
-1. To use this collection create a script, for example `nano start.js`
-2. Make sure you're on your home server if you're not (you can quickly go home by running `home` in the console).
+1. Make sure you're on your home server if you're not (you can quickly go home by running `home` in the console).
+2. To use this collection create a script, for example `nano start.js`
 3. Enter the following code in this script
 
 ```javascript

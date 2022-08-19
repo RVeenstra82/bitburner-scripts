@@ -11,7 +11,6 @@ const scriptsToKill = [
   'hack.js',
   'helper.js',
   'initHacking.js',
-  'killAll.js',
   'mainHack.js',
   'playerServers.js',
   'rootAllServers.js',

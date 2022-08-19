@@ -51,7 +51,7 @@ export async function main(ns) {
 
     const targetServers = findTargetServer(ns, vulnerableServers, serverMap.servers, serverExtraData)
 
-    bestTarget = FARM_FOR_XP ?  "joesguns" : targetServers.shift()
+    let bestTarget = FARM_FOR_XP ?  "joesguns" : targetServers.shift()
     
     const hackTime = ns.getHackTime(bestTarget)
     const growTime = ns.getGrowTime(bestTarget)

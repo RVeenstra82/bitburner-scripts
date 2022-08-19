@@ -9,11 +9,11 @@
 // Parameters:
 const OPERATION_COST = 100000 // do not change this is fixed in the game
 
-//const MAX_STOCK_OWNED_PERCENT = 0.52 // maximum percentages of stock that can be owned at a time. (the more percent you own the more change you make on the market)
-const MAX_STOCK_OWNED_PERCENT = 0.60
+const MAX_STOCK_OWNED_PERCENT = 0.52 // maximum percentages of stock that can be owned at a time. (the more percent you own the more change you make on the market)
 const MIN_FORECAST_PERCENT = 0.10 // min forecast percent from 0.5
 const MIN_EXIT_FORECAST_PERCENT = 0.05 // in case the forecast turn under this value than exit.
-const KEEP_MONEY_ON_HOME_BILLION = 0.01 // how many billion you want to keep out from trading (like for use it for something else)
+const KEEP_MONEY_ON_HOME_BILLION = 0.01 // how many billions you want to keep out from trading (like for use it for something else)
+const KEEP_MONEY_MULTIPLIER = 1000000000
 
 // This script will automatically determine if going short while trading is available
 var shortAvailable = false
@@ -38,7 +38,7 @@ export async function main(ns) {
 
     shortAvailable = canGoShort(ns)
     
-    ns.tprint("Reserving amount = " + ns.nFormat(KEEP_MONEY_ON_HOME_BILLION * 1000000000, "$0.000a"))
+    ns.tprint("Reserving amount = " + ns.nFormat(KEEP_MONEY_ON_HOME_BILLION * KEEP_MONEY_MULTIPLIER, "$0.000a"))
 
     readLogs(ns)
     ns.tail()
@@ -118,7 +118,7 @@ async function trader(ns) {
 
 /** @param {NS} ns */
 function availableMoney(ns) {
-    const money = ns.getServerMoneyAvailable('home') - KEEP_MONEY_ON_HOME_BILLION * 1000000000000
+    const money = ns.getServerMoneyAvailable('home') - KEEP_MONEY_ON_HOME_BILLION * KEEP_MONEY_MULTIPLIER
     return money
 }
 

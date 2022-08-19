@@ -21,12 +21,11 @@ export async function main(ns) {
     ns.tprint(`[${localeHHMMSS()}] Spawning spider.js`)
     await ns.run('spider.js', 1, 'playerServers.js')
 
-    let player = ns.getPlayer();
-    if (player.hasTixApiAccess) {
-      ns.tprint(`[${localeHHMMSS()}] Player has Tix API Access`)
-	  ns.tprint(`[${localeHHMMSS()}] Spawning stockTrader.js`)
-	  await ns.run('stockTrader.js', 1)
+    if (homeRam >= 64) {
+      ns.tprint(`[${localeHHMMSS()}] Spawning stockTrader.js`)
+      await ns.run('stockTrader.js', 1)
     }
+    
     ns.tprint(`[${localeHHMMSS()}] Spawning spider.js`)
     ns.spawn('spider.js', 1, 'mainHack.js')
   } else {

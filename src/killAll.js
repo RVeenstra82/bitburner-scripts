@@ -5,17 +5,21 @@ const settings = {
   },
 }
 const scriptsToKill = [
-  'mainHack.js',
-  'spider.js',
+  'common.js',
+  'find.js',
   'grow.js',
   'hack.js',
-  'weaken.js',
-  'playerServers.js',
-  'runHacking.js',
+  'helper.js',
   'initHacking.js',
+  'killAll.js',
+  'mainHack.js',
+  'playerServers.js',
+  'rootAllServers.js',
+  'runHacking.js',
+  'solve-all-contracts.js',
+  'spider.js',
+  'stockTrader.js',
   'start.js',
-  'find.js',
-  'stockTrader.js'
 ]
 
 function getItem(key) {

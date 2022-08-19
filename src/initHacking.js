@@ -1,18 +1,19 @@
 const baseUrl = 'https://raw.githubusercontent.com/RVeenstra82/bitburner-scripts/main/src/'
 const filesToDownload = [
   'common.js',
-  'mainHack.js',
-  'spider.js',
+  'find.js',
   'grow.js',
   'hack.js',
-  'weaken.js',
-  'playerServers.js',
+  'helper.js',
   'killAll.js',
-  'runHacking.js',
-  'find.js',
+  'mainHack.js',
+  'playerServers.js',
   'rootAllServers.js',
-  'stockTrader.js',
+  'runHacking.js',
   'solve-all-contracts.js',
+  'spider.js',
+  'stockTrader.js',
+  'weaken.js',
 ]
 const valuesToRemove = ['BB_SERVER_MAP']
 

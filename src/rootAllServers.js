@@ -16,6 +16,8 @@ export async function main(ns) {
         await attack(ns, server)
 		await installBackdoor(ns, server)
     }
+
+    ns.tprint("== Finished rootAllServers ==")
 }
 
 async function attack(ns, server) {
@@ -59,8 +61,8 @@ async function attack(ns, server) {
     }
 }
 
-async function installBackdoor(ns. server) {
-	if (!ns.hasRootAccess(server) {
+async function installBackdoor(ns, server) {
+	if (!ns.hasRootAccess(server)) {
 		return;
 	}
     try {

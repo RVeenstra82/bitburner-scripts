@@ -12,7 +12,7 @@ const OPERATION_COST = 100000 // do not change this is fixed in the game
 const MAX_STOCK_OWNED_PERCENT = 0.52 // maximum percentages of stock that can be owned at a time. (the more percent you own the more change you make on the market)
 const MIN_FORECAST_PERCENT = 0.10 // min forecast percent from 0.5
 const MIN_EXIT_FORECAST_PERCENT = 0.05 // in case the forecast turn under this value than exit.
-const KEEP_MONEY_ON_HOME_BILLION = 0.01 // how many billions you want to keep out from trading (like for use it for something else)
+const KEEP_MONEY_ON_HOME_BILLION = 20 // how many billions you want to keep out from trading (like for use it for something else)
 const KEEP_MONEY_MULTIPLIER = 1000000000
 
 // This script will automatically determine if going short while trading is available
@@ -46,7 +46,7 @@ export async function main(ns) {
         ns.clearLog()
         printLogs(ns)
         await trader(ns)
-        for (let i = 0; i < 20; i++) await ns.sleep(99)
+        for (let i = 0; i < 40; i++) await ns.sleep(99)
     }
 }
 
@@ -94,7 +94,7 @@ async function trader(ns) {
     debugHeader()
     const symbols = sortAndFilterSymbols(stock)
     for (let sym of symbols) {
-        const money = availableMoney(ns) - OPERATION_COST
+        const money = availableMoney(ns) - (OPERATION_COST * 20)
         const [shares, avgPx, sharesShort, avgPxShort] = stock.getPosition(sym);
         const isLong = stock.getForecast(sym) > 0.5
         const amountToBuy = stock.getMaxShares(sym) * MAX_STOCK_OWNED_PERCENT - shares - sharesShort

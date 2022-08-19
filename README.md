@@ -24,3 +24,5 @@ export async function main(ns) {
   ns.spawn("initHacking.js", 1);
 }
 ```
+
+4. Save the script and start it by typeing `run start.js`

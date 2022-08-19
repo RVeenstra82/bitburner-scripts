@@ -25,4 +25,5 @@ export async function main(ns) {
 }
 ```
 
-4. Save the script and start it by typeing `run start.js`
+4. Save the script and return to the terminal
+5. Start the script by typing `run start.js`

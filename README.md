@@ -1,7 +1,6 @@
 # bitburner-scripts
 Welcome to my collection of [Bitburner](https://danielyxie.github.io/bitburner/) scripts. They are written using the in-game language of NetscriptJS, which is a mutation of Javascript.
 This collection is a combination of my own scripts, scripts created by others but modified by me and scripts by others that I have not modified.
-Where available I'll name the author of the original script
 
 If you want to play the game itself - click on the name above.
 
